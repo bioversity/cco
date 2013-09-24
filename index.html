@@ -269,6 +269,15 @@ function run() {
 property and by individuals. All the terms are hyperlinked to their detailed description for quick reference.</p>
 
 <div class="glance" id="glance">
+<p>Classes: 
+
+{{#?s a rdfs:Class}}
+
+  | <a href="{{.}}">{{?s rdfs:label ?label}}</a> 
+
+{{/}}
+
+</p>
 <p>Properties: 
 
 {{#?s a rdf:Property}}
@@ -286,12 +295,36 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 
 <br>
 
+{{#?s a rdfs:Class}}
+<div class="specterm" id="{{.}}"><h3>Class: {{?s rdfs:label ?label}}</h3>
+   {{?s rdfs:label ?label}}
+   <br><br>
+
+</div>
+{{/}}
+
 {{#?s a rdf:Property}}
 <div class="specterm" id="{{.}}"><h3>Property: {{?s rdfs:label ?label}}</h3>
    {{?s rdfs:comment ?comment}}
    <br>
    <br>
    <img src="{{?s foaf:depiction ?depiction}}" />
+   <br><br>
+
+  <table style="th { float: top; }">
+  <tbody>
+    <tr>
+    <th>Domain:</th>
+    <td><a href="{{?s rdfs:domain ?domain}}">{{?s rdfs:domain ?domain}}</a></td>
+
+    </tr>
+
+    <tr>
+    <th>Range:</th>
+    <td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
+    </tr>
+  </tbody></table>
+   
 </div>
 {{/}}
 
