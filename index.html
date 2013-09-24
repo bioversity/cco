@@ -40,23 +40,19 @@ MustacheRDF.prototype.init = function() {
     var arr = obj.matches;
 
     for(var i in arr) {
-      if(htmlToLoop.match(that.singleBlock)) {
-        // single block {{.}}
-
-        html += htmlToLoop.replace(that.singleBlock, arr[i]);
-
-      } else if(htmlToLoop.match(that.reg)) {
-        html += htmlToLoop.replace(that.reg, function() {
-          // {{?s rdfs:label ?label}} -> {{cco:xx rdfs:label ?label}}
-          // transform the variable found into full uri
-          var triple = arguments[1]; 
+      html += htmlToLoop.replace(that.reg, function() {
+        // {{?s rdfs:label ?label}} -> {{cco:xx rdfs:label ?label}}
+        // transform the variable found into full uri
+        var triple = arguments[1]; 
+        if(triple == '.') {
+          return arr[i];
+        } else {
           triple = triple.replace(obj.argName, arr[i]);
 
           var a = that.findPattern(triple).matches;
           return a[0];
-        });
-
-      }
+        }
+      });
       
     }
     return html;
@@ -221,7 +217,7 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 
 {{#?s a rdf:Property}}
 
-  | <a href="#term_activity">{{?s rdfs:label ?label}}</a> 
+  | <a href="{{.}}">{{?s rdfs:label ?label}}</a> 
 
 {{/}}
 
