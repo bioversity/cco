@@ -20,19 +20,37 @@ function MustacheRDF(rdf, ns) {
   this.ns = ns;
 
   this.reg = /{{(.*?)}}/g; // this is for curly brackets
+  
+  this.loopBlock = /{{#(.*?)}}([\s\S]*?){{\/}}/g;
+  this.singleBlock = /{{\.}}/g;
 
   this.init();
 }
 MustacheRDF.prototype.init = function() {
   var that = this;
 
+  // do loop
+  var loopReplaced = $('body').html().replace(this.loopBlock, function(){
+    console.log(arguments);
+    var htmlToLoop = arguments[2];
+    var triple = arguments[1]; 
+
+    var html = '';
+    var arr = that.findPattern(triple);
+    for(var i in arr) {
+      html += htmlToLoop.replace(that.singleBlock, arr[i]);  
+    }
+    return html;
+  });
+  $('body').html(loopReplaced);
+
   // replace all instance of curly
   var replaced = $('body').html().replace(this.reg, function() {
     var triple = arguments[1]; 
 
-    var obj = that.findPattern(triple);
+    var arr = that.findPattern(triple);
     
-    return obj;
+    return arr[0];
   });
 
   $('body').html(replaced);
@@ -63,6 +81,7 @@ MustacheRDF.prototype.expandTriple = function(triple) {
   return tripleArr;
 }
 MustacheRDF.prototype.findTriple = function(triple) {
+  var ret = [];
 
   var arg = ['subject', 'predicate', 'object'];
 
@@ -87,19 +106,20 @@ MustacheRDF.prototype.findTriple = function(triple) {
       (triple[2].startsWith('?') || triple[2] == object)
     ){
       // matched
-      return this.rdf[i][arg];
+      ret.push(this.rdf[i][arg]);
 
     }
 
   }
 
+  return ret;
 }
 
 MustacheRDF.prototype.findPattern = function(triple) {
   var tripleArr = this.expandTriple(triple);
 
-  var obj = this.findTriple(tripleArr);
-  return obj;
+  var arr = this.findTriple(tripleArr);
+  return arr;
 }
 
 
@@ -141,22 +161,15 @@ $(function(){
 
     <dt>Contributors:</dt>
 
-    {{cco: dc:contributor ?cont}}
-    <dd></dd>
+    <dd>
+    {{#cco: dc:contributor ?cont}}
+      {{.}},
+    {{/}}
+    </dd>
 
-    <dd><a href="mailto:danbri@danbri.org">Dan Brickley</a>,
-    <a href="mailto:libby@nicecupoftea.org">Libby Miller</a></dd>
-
-    <dt>AAContributors:</dt>
-
-    <dd>Members of the FOAF mailing list (<a href=
-    "http://lists.foaf-project.org/">foaf-dev@lists.foaf-project.org</a>)
-    and the wider <a href="http://www.w3.org/2001/sw/interest/">RDF
-    and Semantic Web developer community</a>. See <a href=
-    "#sec-ack">acknowledgements</a>.</dd>
   </dl>
 
-  <p class="copyright">Copyright &#169; 2000-2010 Dan Brickley and Libby Miller</p>
+  <p class="copyright">Copyright &#169; 2013</p>
   <div about=""  resource="http://www.w3.org/TR/rdfa-syntax"  rel="dct:conformsTo" />
   <p about=""><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;" 
         src="http://www.w3.org/Icons/valid-xhtml-rdfa-blue"   alt="Valid XHTML + RDFa"  /></a>
