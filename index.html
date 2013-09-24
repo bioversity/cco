@@ -125,7 +125,8 @@ MustacheRDF.prototype.findTriple = function(triple) {
       // matched
       var str = this.rdf[i][arg];
       str = $.trim(str);
-      str = str.replace(/\\n/g, ' ');
+      str = str.replace(/^\\n|\\n$/g, ''); // remove newline from beginning and end
+      str = str.replace(/\\n/g, '<br>');
       ret.matches.push(str);
 
     }
@@ -173,8 +174,10 @@ $(function(){
 <body>
   <h1>{{cco: dc:title ?o}}, <small>{{cco: dc:hasVersion ?o}}</small><br /></h1>
 
-  <h2>Namespace Document 9 August 2010 - <em>Marco Polo Edition</em></h2>
+<table width="100%" border="0">
+  <tbody><tr>
 
+    <td>
   <dl>
     <dt>Latest version:</dt>
     <dd><a href="{{cco: foaf:page ?o}}">{{cco: foaf:page ?o}}</a> (<a href="{{cco: foaf:page ?o}}.ttl">RDF Turtle</a>)</dd>
@@ -190,6 +193,43 @@ $(function(){
   </dl>
 
   <p class="copyright">Copyright &#169; 2013</p>
+
+    </td>
+    
+
+    <td>
+	<table style="border:2px dashed #FFCC00; font-size:small; padding:10px;" width="400" border="0" align="center">
+
+                  <tbody><tr>
+                        <td rowspan="2">
+                        <img src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Logo.png" width="120" alt="Github">
+                        </td>
+                        <td align="center"><b>Music Ontology Github project</b></td>
+		</tr>
+		<tr><td align="center">
+			<a href="https://github.com/motools">Source code, Tools</a></td>
+                </tr>
+                  <tr>
+
+                        <td rowspan="2">
+
+                         <img src="http://groups.google.com/groups/img/groups_medium.gif" height="58" width="150" alt="Google Groups">
+
+                        </td>
+
+                        <td align="center"><b>Discussion Group</b></td>
+
+                  </tr>
+                  <tr><td align="center"><a href="http://groups.google.com/group/#">Browse Archives</a></td>
+
+                  </tr>
+                </tbody></table>
+	
+    </td>
+  </tr>
+
+</tbody></table>
+
   <div about=""  resource="http://www.w3.org/TR/rdfa-syntax"  rel="dct:conformsTo" />
   <p about=""><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;" 
         src="http://www.w3.org/Icons/valid-xhtml-rdfa-blue"   alt="Valid XHTML + RDFa"  /></a>
@@ -231,16 +271,17 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 <br>
 
 {{#?s a rdf:Property}}
-<div class="specterm" id="term_Activity"><h3>Property: </h3>
-  <em>{{?s rdfs:label ?label}}</em>
-   - {{?s rdfs:comment ?comment}}<br>
-       
-  <br>
-  <p style="float: right; font-size: small;">[<a href="#glance">back to top</a>]</p>
-
+<div class="specterm" id="{{.}}"><h3>Property: {{?s rdfs:label ?label}}</h3>
+   {{?s rdfs:comment ?comment}}
+   <br>
+   <br>
+   <img src="{{?s foaf:depiction ?depiction}}" />
 </div>
 {{/}}
 
+
+<h2>Acknowledgments</h2>
+<p>{{cco: dc:acknowledgments ?o}}</p>
 
 
 
