@@ -167,12 +167,25 @@ $(function(){
   })  
 });
 
+function run() {
+
+  $('img[src=undefined]').remove();
+  $('script').remove();
+  $('.specterm').each(function() {
+    $this = $(this);
+    var id = $this.attr('id');
+    var ids = id.split('#');
+    $this.attr('id', ids[1]);
+  });
+  $('title').text($('span.title').text());
+}
+
 </script>
 
 </head>
 
 <body>
-  <h1>{{cco: dc:title ?o}}, <small>{{cco: dc:hasVersion ?o}}</small><br /></h1>
+  <h1><span class="title">{{cco: dc:title ?o}}</span>, <small>{{cco: dc:hasVersion ?o}}</small><br /></h1>
 
 <table width="100%" border="0">
   <tbody><tr>
