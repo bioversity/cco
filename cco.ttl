@@ -1,0 +1,174 @@
+@prefix cco: <http://data.agrobiodiversity.org/cco#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+   
+cco:  a owl:Ontology ;
+      dc:created "2013/09/23 12:00:00";
+      dc:date "2013/09/23 12:00:00";
+      dc:description """
+        The Crop Characterization Ontology provides main concepts and 
+        properties for describing the characteristics of various crops. 
+        These concepts enable an easy and quick discrimination between
+phenotypes. They are generally highly heritable, can be easily seen by the eye and are
+equally expressed in all environments. In addition, these may include a limited number
+of additional traits thought desirable by a consensus of users of the particular crop.
+    """ ;
+      dc:title "The Crop Characterization Ontology" ;
+      dc:hasVersion "Revision: 0.1" ;
+      dc:contributor "Dr Silvio Belalcazar","Dr F. Carreel","Ching-Yan Tang","Dr Jeff Daniells","Prof. Bruno Delvaux","Mr Guy Evers","Dr Victor Galan Sauco","Dr Ricardo Goenaga","Prof. Oscar Haddad","Dr Yair Isralei","Mr Christophe Jenny","Mrs Deborah Karamura","Dr Emmanuel Lahav","Mr Christian Lavigne","Mr Thierry Lescot","Dr Rodomiro Ortiz","Mr Orlando C. Pascua","Mr Xavier Perrier","Dr Franklin Rosales","Ing. Irelio Sanchez Ramos","Prof Rony Swennen","Mr Hughes Tezenas du Montcel","Dr Kodjo Tomekpe", "Ir. Ines Van den houwe";
+      dc:acknowledgments """IPGRI-INIBAP and CIRAD wish to place on record their sincere thanks to the numerous Musa
+workers around the world who have contributed directly or indirectly to the development of
+the Descriptors for banana.
+Mr H. Tezenas du Montcel, Mr C. Jenny and Dr X. Perrier from CIRAD-FLHOR have
+contributed to the development of the characterization form, which has been translated into
+English by Ms S. Sharrock (IBPGR) and into Spanish by Mr T. Lescot (CIRAD).
+Translation from French into English has been performed by Dr D.R. Jones, Ms E Arnaud
+and Dr J.P. Horry.
+Ms Adriana Alercia coordinated and supervised the text up to the pre-publication stage
+and provided technical advice. Ms Linda Sears edited the text and Ms Patrizia Tazza drew
+the cover, some illustrations, and prepared the layout. Scientific direction was provided by
+Dr Jean-Pierre Horry. Mr Paul Stapleton managed the production of the publication."""
+     .
+        
+cco:leafHabitMusa a rdf:Property;
+    rdfs:label "Leaf habit"@en;
+    rdfs:comment """1 Erect
+2 Intermediate
+3 Drooping
+4 Other (e.g. very drooping, specify in descriptor Notes, 6.8)"""@en;
+    cco:section "6.1.1";
+    foaf:depiction <http://www.agrobiodiversity.org/files/leafHabit.png>
+    .
+    
+cco:dwarfismMusa a rdf:Property;
+    rdfs:label "Dwarfism"@en;
+    rdfs:comment """1 Normal: leaves not overlapped and leaf ratio inferior to 2.5
+2 Dwarf type: leaves strongly overlapped and leaf ratio superior
+to 2.5"""@en;
+    cco:section "6.1.2"
+    .
+    
+cco:pseudostemHeightMusa a rdf:Property;
+    rdfs:label "Pseudostem height [m]"@en;
+    rdfs:comment """Recorded from the base of pseudostem to emerging point of the peduncle
+1 ≤2
+2 2.1 to 2.9
+3 ≥3"""@en;
+    cco:section "6.2.1";
+    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    .
+    
+    
+cco:pseudostemAspectMusa a rdf:Property;
+    rdfs:label "Pseudostem aspect"@en;
+    rdfs:comment """Determined by the circumference at 100 cm
+1 Slender
+2 Normal
+3 Robust"""@en;
+    cco:section "6.2.2";
+    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    .
+    
+    
+cco:pseudostemColourMusa a rdf:Property;
+    rdfs:label "Pseudostem colour"@en;
+    rdfs:comment """Recorded without removing the external sheaths. The colour of oldest dry sheaths
+should not be considered.
+1 Green-yellow
+2 Medium green
+3 Green
+4 Dark green
+5 Green-red
+6 Red
+7 Red-purple
+8 Blue
+9 Chimerical
+10 Other"""@en;
+    cco:section "6.2.3";
+    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    .
+    
+    
+cco:pseudostemAppearanceMusa a rdf:Property;
+    rdfs:label "Pseudostem appearance"@en;
+    rdfs:comment """Recorded as in cco:pseudostemColourMusa
+1 Dull (waxy)
+2 Shiny (not waxy)"""@en;
+    cco:section "6.2.4";
+    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    .
+    
+    
+cco:predominantUnderlyingColourPseudostemMusa a rdf:Property;
+    rdfs:label "Predominant underlying colour of the pseudostem"@en;
+    rdfs:comment """Remove the outermost sheath from the pseudostem and look at the exposed surface
+of the underlying pseudostem. The values 5 (pink-purple), 6 (red-purple) and 7
+(purple) must be chosen only if the pigmentation is uniform, and green tinges are
+not observed.
+1 Watery green
+2 Light green
+3 Green
+4 Cream
+5 Pink-purple
+6 Red-purple
+7 Purple
+8 Other"""@en;
+    cco:section "6.2.5";
+    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    .
+    
+cco:pigmentationUnderlyingPseudostemMusa a rdf:Property;
+    rdfs:label "Pigmentation of the underlying pseudostem"@en;
+    rdfs:comment """Record the tinge of pigmentation, even if it is only noticeable in places.
+1 Pink-purple
+2 Red
+3 Purple
+4 Other"""@en;
+    cco:section "6.2.6";
+    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    .
+    
+    
+
+cco:sapColourMusa a rdf:Property;
+    rdfs:label "Sap colour"@en;
+    rdfs:comment """Cut the external sheath of pseudostem and record the characteristics of the sap.
+1 Watery
+2 Milky
+3 Red-purple
+4 Other"""@en;
+    cco:section "6.2.7"
+    .
+    
+    
+cco:waxLeafSheathsMusa a rdf:Property;
+    rdfs:label "Wax on leaf sheaths"@en;
+    rdfs:comment """1 Very little or no visible sign of wax
+2 Very few wax
+3 Moderately waxy
+4 Very waxy"""@en;
+    cco:section "6.2.8"
+    .
+    
+    
+cco:numberOfSuckersMusa a rdf:Property;
+    rdfs:label "Number of suckers"@en;
+    rdfs:comment """Record the number of suckers from soil level to point of emergence of the last leaf
+(>30 cm height). Recorded only if no desuckering has taken place"""@en;
+    cco:section "6.2.9"
+    .
+    
+cco:developmentOfSuckersMusa a rdf:Property;
+    rdfs:label "Development of suckers"@en;
+    rdfs:comment """RIn relation to the parent plant. Observed on the tallest sucker. Recorded at harvest
+time
+1 Taller than parent plant
+2 More than 3/4 of the height of the parent plant
+3 Between 1/4 and 3/4 of the height of the parent plant
+4 Inhibited"""@en;
+    cco:section "6.2.10"
+    .
