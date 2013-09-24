@@ -14,7 +14,8 @@ cco:  a owl:Ontology ;
       dc:hasVersion "Revision: 0.1" ;
       dc:contributor "Dr Silvio Belalcazar","Dr F. Carreel","Ching-Yan Tang","Dr Jeff Daniells","Prof. Bruno Delvaux","Mr Guy Evers","Dr Victor Galan Sauco","Dr Ricardo Goenaga","Prof. Oscar Haddad","Dr Yair Isralei","Mr Christophe Jenny","Mrs Deborah Karamura","Dr Emmanuel Lahav","Mr Christian Lavigne","Mr Thierry Lescot","Dr Rodomiro Ortiz","Mr Orlando C. Pascua","Mr Xavier Perrier","Dr Franklin Rosales","Ing. Irelio Sanchez Ramos","Prof Rony Swennen","Mr Hughes Tezenas du Montcel","Dr Kodjo Tomekpe", "Ir. Ines Van den houwe";
       dc:acknowledgments """IPGRI-INIBAP and CIRAD wish to place on record their sincere thanks to the numerous Musa workers around the world who have contributed directly or indirectly to the development of the Descriptors for banana. Mr H. Tezenas du Montcel, Mr C. Jenny and Dr X. Perrier from CIRAD-FLHOR have contributed to the development of the characterization form, which has been translated into English by Ms S. Sharrock (IBPGR) and into Spanish by Mr T. Lescot (CIRAD). Translation from French into English has been performed by Dr D.R. Jones, Ms E Arnaud and Dr J.P. Horry. Ms Adriana Alercia coordinated and supervised the text up to the pre-publication stage and provided technical advice. Ms Linda Sears edited the text and Ms Patrizia Tazza drew the cover, some illustrations, and prepared the layout. Scientific direction was provided by Dr Jean-Pierre Horry. Mr Paul Stapleton managed the production of the publication. Luca Matteis produced the underlying data model and the semantics of the ontology.""";
-    foaf:page "http://data.agrobiodiversity.org/cco"
+    foaf:page "http://data.agrobiodiversity.org/cco";
+    rdfs:seeAlso "http://www.bioversityinternational.org/e-library/publications/categories/descriptors/"
      .
         
 cco:leafHabitMusa a rdf:Property;
