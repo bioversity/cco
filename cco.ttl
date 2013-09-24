@@ -32,6 +32,7 @@ Ms Adriana Alercia coordinated and supervised the text up to the pre-publication
 and provided technical advice. Ms Linda Sears edited the text and Ms Patrizia Tazza drew
 the cover, some illustrations, and prepared the layout. Scientific direction was provided by
 Dr Jean-Pierre Horry. Mr Paul Stapleton managed the production of the publication."""
+    foaf:page "http://data.agrobiodiversity.org/cco"
      .
         
 cco:leafHabitMusa a rdf:Property;

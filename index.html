@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>FOAF Vocabulary Specification</title>
+  <title>{{cco: dc:title ?o}}</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <link href="http://xmlns.com/xmlns-style.css" rel="stylesheet"  type="text/css" />
   <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
@@ -45,13 +45,21 @@ MustacheRDF.prototype.expandTriple = function(triple) {
   // for each triple, see if it starts with a namespace in this.ns
   for(var i in tripleArr) {
 
+    // replace 'a' with rdf:type
+    if(tripleArr[i] == 'a') {
+      tripleArr[i] = 'rdf:type';
+    }
+
+    // expand namespaces
     for(var n in this.ns) {
       if(tripleArr[i].startsWith(n)) {
         tripleArr[i] = tripleArr[i].replace(n, this.ns[n], 'g'); 
         break;
       }
     }
+
   }
+
   return tripleArr;
 }
 MustacheRDF.prototype.findTriple = function(triple) {
@@ -122,16 +130,13 @@ $(function(){
 </head>
 
 <body>
-  <h1>{{cco: dc:title ?o}} {{cco: dc:hasVersion ?o}}<br /></h1>
+  <h1>{{cco: dc:title ?o}}, <small>{{cco: dc:hasVersion ?o}}</small><br /></h1>
 
   <h2>Namespace Document 9 August 2010 - <em>Marco Polo Edition</em></h2>
 
   <dl>
-    <dt>This version:</dt>
-    <dd><a href="http://xmlns.com/foaf/spec/20100809.html">http://xmlns.com/foaf/spec/20100809.html</a> (<a href="20100809.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/FoafSpec20100809">wiki</a>)</dd>
-
     <dt>Latest version:</dt>
-    <dd><a href="http://xmlns.com/foaf/spec/">http://xmlns.com/foaf/spec/</a> (<a href="index.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/">wiki</a>)</dd>
+    <dd><a href="{{cco: foaf:page ?o}}">{{cco: foaf:page ?o}}</a> (<a href="20100809.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/FoafSpec20100809">wiki</a>)</dd>
 
     <dt>Previous version:</dt>
     <dd><a href="http://xmlns.com/foaf/spec/20100101.html">http://xmlns.com/foaf/spec/20100101.html</a> (<a  href="20100101.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/FoafSpec20100101.html">wiki</a>)</dd>
