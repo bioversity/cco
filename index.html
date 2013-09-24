@@ -31,14 +31,33 @@ MustacheRDF.prototype.init = function() {
 
   // do loop
   var loopReplaced = $('body').html().replace(this.loopBlock, function(){
-    console.log(arguments);
+    //console.log(arguments);
     var htmlToLoop = arguments[2];
     var triple = arguments[1]; 
 
     var html = '';
-    var arr = that.findPattern(triple);
+    var obj = that.findPattern(triple);
+    var arr = obj.matches;
+
     for(var i in arr) {
-      html += htmlToLoop.replace(that.singleBlock, arr[i]);  
+      if(htmlToLoop.match(that.singleBlock)) {
+        // single block {{.}}
+
+        html += htmlToLoop.replace(that.singleBlock, arr[i]);
+
+      } else if(htmlToLoop.match(that.reg)) {
+        html += htmlToLoop.replace(that.reg, function() {
+          // {{?s rdfs:label ?label}} -> {{cco:xx rdfs:label ?label}}
+          // transform the variable found into full uri
+          var triple = arguments[1]; 
+          triple = triple.replace(obj.argName, arr[i]);
+
+          var a = that.findPattern(triple).matches;
+          return a[0];
+        });
+
+      }
+      
     }
     return html;
   });
@@ -48,7 +67,7 @@ MustacheRDF.prototype.init = function() {
   var replaced = $('body').html().replace(this.reg, function() {
     var triple = arguments[1]; 
 
-    var arr = that.findPattern(triple);
+    var arr = that.findPattern(triple).matches;
     
     return arr[0];
   });
@@ -81,7 +100,8 @@ MustacheRDF.prototype.expandTriple = function(triple) {
   return tripleArr;
 }
 MustacheRDF.prototype.findTriple = function(triple) {
-  var ret = [];
+  var ret = {};
+  ret.matches = [];
 
   var arg = ['subject', 'predicate', 'object'];
 
@@ -89,6 +109,7 @@ MustacheRDF.prototype.findTriple = function(triple) {
   for(var x in triple) {
     if(triple[x].startsWith('?')) {
       arg = arg[x];
+      ret.argName = triple[x];
       break;
     }
   }
@@ -106,7 +127,10 @@ MustacheRDF.prototype.findTriple = function(triple) {
       (triple[2].startsWith('?') || triple[2] == object)
     ){
       // matched
-      ret.push(this.rdf[i][arg]);
+      var str = this.rdf[i][arg];
+      str = $.trim(str);
+      str = str.replace(/\\n/g, ' ');
+      ret.matches.push(str);
 
     }
 
@@ -118,8 +142,8 @@ MustacheRDF.prototype.findTriple = function(triple) {
 MustacheRDF.prototype.findPattern = function(triple) {
   var tripleArr = this.expandTriple(triple);
 
-  var arr = this.findTriple(tripleArr);
-  return arr;
+  var obj = this.findTriple(tripleArr);
+  return obj;
 }
 
 
@@ -179,6 +203,32 @@ $(function(){
   "http://creativecommons.org/licenses/by/1.0/">Creative Commons Attribution License</a>. This copyright applies to the <em>FOAF Vocabulary Specification</em> and accompanying documentation in RDF. Regarding underlying technology, FOAF uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an open Web standard that can be freely used by anyone.</p>
   
   <hr />
+
+  <h2>Abstract</h2>
+
+  <p>{{cco: dc:description ?o}}</p>
+
+  <hr />
+
+  <h2>{{cco: dc:title ?o}} At A Glance</h2>
+
+<p>An alphabetical index of the terms, by class (categories or types), by
+
+property and by individuals. All the terms are hyperlinked to their detailed description for quick reference.</p>
+
+<div class="glance" id="glance">
+<p>Properties: 
+
+{{#?s a rdf:Property}}
+
+  | <a href="#term_activity">{{?s rdfs:label ?label}}</a> 
+
+{{/}}
+
+</p>
+</div>
+
+
 
 </body>
 </html>
