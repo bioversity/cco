@@ -5,7 +5,7 @@
   <link href="http://xmlns.com/xmlns-style.css" rel="stylesheet"  type="text/css" />
   <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://www.kanzaki.com/parts/turtle.js"></script>
+  <script type="text/javascript" src="turtle.js"></script>
 
 <script>
 // need this function
@@ -105,11 +105,12 @@ MustacheRDF.prototype.findPattern = function(triple) {
 
 $(function(){
   
-  var url = 'https://api.github.com/repos/bioversity/cco/contents/cco.ttl?callback=?';
+  var url = 'cco.ttl';
 
-  $.getJSON(url, function(data) {
+  $.get(url, function(data) {
     // atob() breaks with newlines, so remove them
-    var ttl = atob(data.data.content.replace(/\s/g, ''));
+    //var ttl = atob(data.data.content.replace(/\s/g, ''));
+    var ttl = data;
 
     var turtle = new ParseTurtle();
 
@@ -136,15 +137,17 @@ $(function(){
 
   <dl>
     <dt>Latest version:</dt>
-    <dd><a href="{{cco: foaf:page ?o}}">{{cco: foaf:page ?o}}</a> (<a href="20100809.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/FoafSpec20100809">wiki</a>)</dd>
+    <dd><a href="{{cco: foaf:page ?o}}">{{cco: foaf:page ?o}}</a> (<a href="{{cco: foaf:page ?o}}.ttl">RDF Turtle</a>)</dd>
 
-    <dt>Previous version:</dt>
-    <dd><a href="http://xmlns.com/foaf/spec/20100101.html">http://xmlns.com/foaf/spec/20100101.html</a> (<a  href="20100101.rdf">rdf</a>, <a href="http://wiki.foaf-project.org/w/FoafSpec20100101.html">wiki</a>)</dd>
-    <dt>Authors:</dt>
+    <dt>Contributors:</dt>
+
+    {{cco: dc:contributor ?cont}}
+    <dd></dd>
+
     <dd><a href="mailto:danbri@danbri.org">Dan Brickley</a>,
     <a href="mailto:libby@nicecupoftea.org">Libby Miller</a></dd>
 
-    <dt>Contributors:</dt>
+    <dt>AAContributors:</dt>
 
     <dd>Members of the FOAF mailing list (<a href=
     "http://lists.foaf-project.org/">foaf-dev@lists.foaf-project.org</a>)
