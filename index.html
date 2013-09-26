@@ -64,7 +64,7 @@ function run() {
 
     <dd>
     {{#cco: foaf:authors ?author}}
-      {{?author foaf:name ?name}} - <a href="{{?author foaf:homepage ?homepage}}">{{?author foaf:org ?org}}</a><br>
+      <a href="{{?author foaf:homepage ?homepage}}">{{?author foaf:name ?name}}</a><br>
     {{/}}
     </dd>
     <dt>Contributors:</dt>
@@ -178,6 +178,7 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 
 </div>
 {{/}}
+
 
 {{#?s a rdf:Property}}
 <div class="specterm" id="{{.}}"><h3>Property: {{?s rdfs:label ?label}}</h3>

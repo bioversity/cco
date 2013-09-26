@@ -13,8 +13,7 @@ cco:  a owl:Ontology ;
       dc:title "The Crop Characterization Ontology" ;
       dc:hasVersion "Revision: 0.1" ;
       foaf:authors 
-        [ foaf:name "Alercia Adriana"; foaf:org "Bioversity International"; foaf:homepage "http://www.bioversityinternational.org/" ],
-        [ foaf:name "Luca Matteis"; foaf:org "Bioversity International"; foaf:homepage "http://www.bioversityinternational.org/" ];
+        [ foaf:name "Bioversity International"; foaf:homepage "http://www.bioversityinternational.org/" ];
       dc:contributor "Dr Silvio Belalcazar","Dr F. Carreel","Ching-Yan Tang","Dr Jeff Daniells","Prof. Bruno Delvaux","Mr Guy Evers","Dr Victor Galan Sauco","Dr Ricardo Goenaga","Prof. Oscar Haddad","Dr Yair Isralei","Mr Christophe Jenny","Mrs Deborah Karamura","Dr Emmanuel Lahav","Mr Christian Lavigne","Mr Thierry Lescot","Dr Rodomiro Ortiz","Mr Orlando C. Pascua","Mr Xavier Perrier","Dr Franklin Rosales","Ing. Irelio Sanchez Ramos","Prof Rony Swennen","Mr Hughes Tezenas du Montcel","Dr Kodjo Tomekpe", "Ir. Ines Van den houwe";
       dc:acknowledgments """IPGRI-INIBAP and CIRAD wish to place on record their sincere thanks to the numerous Musa workers around the world who have contributed directly or indirectly to the development of the Descriptors for banana. Mr H. Tezenas du Montcel, Mr C. Jenny and Dr X. Perrier from CIRAD-FLHOR have contributed to the development of the characterization form, which has been translated into English by Ms S. Sharrock (IBPGR) and into Spanish by Mr T. Lescot (CIRAD). Translation from French into English has been performed by Dr D.R. Jones, Ms E Arnaud and Dr J.P. Horry. Ms Adriana Alercia coordinated and supervised the text up to the pre-publication stage and provided technical advice. Ms Linda Sears edited the text and Ms Patrizia Tazza drew the cover, some illustrations, and prepared the layout. Scientific direction was provided by Dr Jean-Pierre Horry. Mr Paul Stapleton managed the production of the publication. Luca Matteis produced the underlying data model and the semantics of the ontology.""";
       foaf:page "http://data.agrobiodiversity.org/cco";
@@ -514,7 +513,7 @@ before the plant flowers. (Chart A)
     cco:section "6.3.22"
     .
 
-cco:blotchesOnLeavesOfWaterSuckers a rdf:Property;
+cco:blotchesOnLeavesOfWaterSuckersMusa a rdf:Property;
     rdfs:label "Blotches on leaves of water suckers"@en;
     rdfs:comment """
 Observed on young, non inhibited water suckers (if the lamina is sword shaped, it
@@ -526,6 +525,606 @@ is not a water sucker)
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
     cco:section "6.3.23"
+    .
+
+
+
+cco:peduncleLengthMusa a rdf:Property;
+    rdfs:label "Peduncle length"@en;
+    rdfs:comment """
+Measured from the leaf crown to the first hand of fruit
+1 ≤30 cm
+2 31 - 60 cm
+3 ≥61 cm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.1"
+    .
+
+cco:emptyNodesOnPeduncleMusa a rdf:Property;
+    rdfs:label "Empty nodes on peduncle"@en;
+    rdfs:comment """
+Record the number of empty nodes between the last bract-leaf and first hand of
+fruit
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.2"
+    .
+    
+cco:peduncleWidthMusa a rdf:Property;
+    rdfs:label "Peduncle width"@en;
+    rdfs:comment """
+Recorded at mid-length
+1 ≤6 cm
+2 7 - 12 cm
+3 ≥13 cm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.3"
+    .
+
+cco:peduncleColourMusa a rdf:Property;
+    rdfs:label "Peduncle colour"@en;
+    rdfs:comment """
+Descriptor state 4 (red/or pink-purple) is green homogeneously tinged with red
+(purple green appearance). When pigmentation is scattered, use state 5. (Chart A)
+1 Light green
+2 Green
+3 Dark green
+4 Red or pink/purple
+5 With purple-brown to blue blotches
+6 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.4"
+    .
+
+cco:peduncleHairinessMusa a rdf:Property;
+    rdfs:label "Peduncle hairiness"@en;
+    rdfs:comment """
+1 Hairless
+2 Slightly hairy
+3 Very hairy, short hairs (similar to velvet touch)
+4 Very hairy, long hairs (>2 mm)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.5"
+    .
+
+cco:bunchPositionMusa a rdf:Property;
+    rdfs:label "Bunch position"@en;
+    rdfs:comment """
+(Position of the fruit-bearing part). Angle from vertical to the general axis of the
+bunch
+1 Hanging vertically
+2 Slightly angled
+3 Hanging at angle 45°
+4 Horizontal
+5 Erect
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.6"
+    .
+
+
+cco:bunchShapeMusa a rdf:Property;
+    rdfs:label "Bunch shape"@en;
+    rdfs:comment """
+1 Cylindrical
+2 Truncated cone shape
+3 Asymmetric - Bunch axis is nearly straight
+4 With a curve in the bunch axis
+5 Spiral (all fruit is attached to a unique crown coiled around the
+stalk)
+"""@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.7"
+    .
+
+cco:bunchAppearanceMusa a rdf:Property;
+    rdfs:label "Bunch appearance"@en;
+    rdfs:comment """
+1 Lax (one can easily place one’s hand between the
+hands of fruit)
+2 Compact (one can place one’s finger, but not one’s hand,
+between the hands of fruit)
+3 Very compact (one cannot place one’s finger between the hands
+of fruit)
+"""@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.8"
+    .
+
+cco:flowersThatFormTheFruitMusa a rdf:Property;
+    rdfs:label "Flowers that form the fruit"@en;
+    rdfs:comment """
+(4.2.3)
+Record at flowering if the flowers of the first hands bear apparently functional
+stamens
+1 Female (absence of pollen sacs or pollens)
+2 Hermaphrodite (presence of pollen sacs and pollens)
+"""@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.9"
+    .
+
+cco:fruitsMusa a rdf:Property;
+    rdfs:label "Fruits"@en;
+    rdfs:comment """
+Positioning of fruits on the crown
+1 Uniseriate
+2 Biseriate
+3 Biseriate and fused
+"""@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.10"
+    .
+
+cco:rachisTypeMusa a rdf:Property;
+    rdfs:label "Rachis type"@en;
+    rdfs:comment """
+1 Truncated, no bract scar below the last hand of fruit
+2 Present and male bud may be degenerated or persistent
+"""@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.11"
+    .
+
+cco:rachisPositionMusa a rdf:Property;
+    rdfs:label "Rachis position"@en;
+    rdfs:comment """
+1 Falling vertically
+2 At an angle
+3 With a curve
+4 Horizontal
+5 Erect
+"""@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/rachisPosition.png>;
+    cco:section "6.4.12"
+    .
+
+cco:rachisAppearanceMusa a rdf:Property;
+    rdfs:label "Rachis appearance"@en;
+    rdfs:comment """
+1 Bare
+2 Neutral flowers (one to few hands only, stalk is bare below)
+3 Male flowers/bracts above the male bud (but the stalk is bare above
+flowers/bracts)
+4 Neutral/male flowers and presence of withered bracts (on the
+whole stalk)
+5 Neutral/male flowers on the whole stalk without persistent bracts
+(e.g. AA var. ‘Tuu Gia’)
+6 Small bunch from neutral/hermaphrodite flowers just above the
+male bud (e.g. ABB var. ‘Monthan’)
+7 Other (specify in descriptor 6.8, Notes)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.13"
+    .
+
+cco:maleBudTypeMusa a rdf:Property;
+    rdfs:label "Male bud type"@en;
+    rdfs:comment """
+Recorded at maturity
+1 Normal (present)
+2 Degenerating before maturity (like false-horn ‘Plantain’)
+3 Like true-horn ‘Plantain’ (absent)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.14"
+    .
+
+cco:maleBudShapeMusa a rdf:Property;
+    rdfs:label "Male bud shape"@en;
+    rdfs:comment """
+Note the general shape of the male bud at harvest.
+1 Like a top 
+2 Lanceolate
+3 Intermediate
+4 Ovoid
+5 Rounded
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/maleBudShape.png>;
+    cco:section "6.4.15"
+    .
+
+cco:maleBudSizeMusa a rdf:Property;
+    rdfs:label "Male bud size"@en;
+    rdfs:comment """
+Length and maximum diameter of male bud at harvest
+1 ≤20 cm
+2 21 to 30 cm
+3 ≥31 cm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.4.16"
+    .
+
+
+cco:bractBaseShapeMusa a rdf:Property;
+    rdfs:label "Bract base shape"@en;
+    rdfs:comment """
+1 Small shoulder
+2 Medium
+3 Large shoulder
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/bractBaseShapeMusa.png>;
+    cco:section "6.5.1"
+    .
+
+cco:bractApexShapeMusa a rdf:Property;
+    rdfs:label "Bract apex shape"@en;
+    rdfs:comment """
+Flatten the apex of the bract to observe its shape.
+1 Pointed
+2 Slightly pointed
+3 Intermediate
+4 Obtuse
+5 Obtuse and split
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/bractApexShapeMusa.png>;
+    cco:section "6.5.2"
+    .
+
+cco:bractImbricationMusa a rdf:Property;
+    rdfs:label "Bract imbrication"@en;
+    rdfs:comment """
+Note alignment of bracts at the apex of the male bud
+1 Old bracts overlap at apex of bud (like Musa acuminata subsp. malaccensis)
+2 Young bracts slightly overlap
+3 Young bracts greatly overlap (like Musa acuminata subsp. burmanicca)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.3"
+    .
+
+
+cco:colourOfTheBractExternalFaceMusa a rdf:Property;
+    rdfs:label "Colour of the bract external face"@en;
+    rdfs:comment """
+1 Yellow 
+2 Green 
+3 Red 
+4 Red-purple
+5 Purple-brown
+6 Purple
+7 Blue
+8 Pink-purple
+9 Orange-red
+10 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.4"
+    .
+
+cco:colourOfTheBractInternalFaceMusa a rdf:Property;
+    rdfs:label "Colour of the bract internal face"@en;
+    rdfs:comment """
+1 Whitish
+2 Yellow or green 
+3 Orange red 
+4 Red 
+5 Purple
+6 Purple brown
+7 Pink-purple
+8 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.5"
+    .
+
+cco:colourOnTheBractApexMusa a rdf:Property;
+    rdfs:label "Colour on the bract apex"@en;
+    rdfs:comment """
+Recorded on the external face of the bract
+1 Tinted with yellow (discoloured)
+2 Not tinted with yellow (colour is uniform until apex)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.6"
+    .
+
+cco:colourStripesOnBractMusa a rdf:Property;
+    rdfs:label "Colour stripes on bract"@en;
+    rdfs:comment """
+1 Without discoloured lines (not ridges) on the external face
+2 With discoloured lines or stripes on the external face
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.7"
+    .
+
+cco:bractScarsOnRachisMusa a rdf:Property;
+    rdfs:label "Bract scars on rachis"@en;
+    rdfs:comment """
+Recorded on scars left after fall of bracts and flowers
+1 Very prominent
+2 Not prominent
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.8"
+    .
+
+cco:fadingOfColourOnBractBaseMusa a rdf:Property;
+    rdfs:label "Fading of colour on bract base"@en;
+    rdfs:comment """
+Observed on the inside of the bract
+1 Colour discontinuing towards the base (loss of pigmentation at the base)
+2 Colour homogenous (pigmentation is uniform and continues until the base)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.9"
+    .
+
+cco:maleBractShapeMusa a rdf:Property;
+    rdfs:label "Male bract shape"@en;
+    rdfs:comment """
+1 x/y < 0.28 (Lanceolate)
+2 0.28 < x/y <0.30
+3 x/y > 0.30 (Ovate)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/maleBractShapeMusa.png>;
+    cco:section "6.5.10"
+    .
+
+cco:maleBractLiftingMusa a rdf:Property;
+    rdfs:label "Male bract lifting"@en;
+    rdfs:comment """
+Number of raised bracts present on the male bud
+1 Not lifting from male bud (bracts are persistent)
+2 Lifting one at a time
+3 Lifting two or more at a time
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.11"
+    .
+
+cco:bractBehaviourBeforeFallingMusa a rdf:Property;
+    rdfs:label "Bract behaviour before falling"@en;
+    rdfs:comment """
+1 Revolute (rolling)
+2 Not revolute (not rolling)
+Fig. 13 Bract behaviour before falling
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/bractBehaviourBeforeFallingMusa.png>;
+    cco:section "6.5.12"
+    .
+
+cco:waxOnTheBractMusa a rdf:Property;
+    rdfs:label "Wax on the bract"@en;
+    rdfs:comment """
+Recorded on the external surface
+1 Very little or no visible sign of wax
+2 Very few wax
+3 Moderately waxy
+4 Very waxy
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.13"
+    .
+
+cco:presenceOfGroovesOnTheBractMusa a rdf:Property;
+    rdfs:label "Presence of grooves on the bract"@en;
+    rdfs:comment """
+Observed on the external surface
+1 Few grooves or not grooved (the bract is completely, or almost completely, smooth)
+2 Moderate grooving (parallel ridges are distinguishable)
+3 Strongly grooved (deep parallel furrows on the surface of bract)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.5.14"
+    .
+
+
+cco:maleFlowerBehaviourMusa a rdf:Property;
+    rdfs:label "Male flower behaviour"@en;
+    rdfs:comment """
+1 Falling before the bract
+2 Falling with the bract
+3 Falling after the bract
+4 Neutral/male flowers persistent
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/maleFlowerMusa.png>;
+    cco:section "6.6.1"
+    .
+
+cco:compoundTepalBasicColourMusa a rdf:Property;
+    rdfs:label "Compound tepal basic colour"@en;
+    rdfs:comment """
+Without considering lobe colour.
+1 White
+2 Cream
+3 Yellow
+4 Orange
+5 Pink/pink-purple
+6 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.2"
+    .
+
+cco:compoundTepalPigmentationMusa a rdf:Property;
+    rdfs:label "Compound tepal pigmentation"@en;
+    rdfs:comment """
+1 Very few or no visible sign of pigmentation
+2 Rust-coloured spots
+3 Presence of pink
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.3"
+    .
+
+cco:lobeColourOfCompoundTepalMusa a rdf:Property;
+    rdfs:label "Lobe colour of compound tepal"@en;
+    rdfs:comment """
+1 Cream
+2 Yellow
+3 Orange
+4 Green
+5 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.4"
+    .
+
+cco:lobeDevelopmentOfCompoundTepalMusa a rdf:Property;
+    rdfs:label "Lobe development of compound tepal"@en;
+    rdfs:comment """
+1 Little or not visible sign of development
+2 Developed
+3 Very developed
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.5"
+    .
+
+cco:freeTepalColourMusa a rdf:Property;
+    rdfs:label "Free tepal colour"@en;
+    rdfs:comment """
+1 Translucent white
+2 Opaque white
+3 Tinted with yellow
+4 Tinted with pink
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.6"
+    .
+
+cco:freeTepalShapeMusa a rdf:Property;
+    rdfs:label "Free tepal shape"@en;
+    rdfs:comment """
+1 Rectangular
+2 Oval
+3 Rounded
+4 Fan-shaped
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.7"
+    .
+
+cco:freeTepalAppearanceMusa a rdf:Property;
+    rdfs:label "Free tepal appearance"@en;
+    rdfs:comment """
+1 Simple folding under apex
+2 More or less smooth
+3 Several folding under apex (corrugated)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.8"
+    .
+
+ 
+cco:freeTepalApexDevelopmentMusa a rdf:Property;
+    rdfs:label "Free tepal apex development"@en;
+    rdfs:comment """
+1 Little or no visible sign of development
+2 Developed
+3 Very developed
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/freeTepalApexDevelopmentMusa.png>;
+    cco:section "6.6.9"
+    .
+
+cco:freeTepalApexShapeMusa a rdf:Property;
+    rdfs:label "Free tepal apex shape"@en;
+    rdfs:comment """
+1 Thread-like
+2 Triangular
+3 Obtuse
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.10"
+    .
+
+cco:antherExsertionMusa a rdf:Property;
+    rdfs:label "Anther exsertion"@en;
+    rdfs:comment """
+In relation to the base of the lobes on the compound tepal
+1 Exserted
+2 Same level
+3 Inserted
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.11"
+    .
+
+cco:filamentColourMusa a rdf:Property;
+    rdfs:label "Filament colour"@en;
+    rdfs:comment """
+1 White
+2 Cream
+3 Yellow
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.12"
+    .
+
+cco:antherColourMusa a rdf:Property;
+    rdfs:label "Anther colour"@en;
+    rdfs:comment """
+Observed on the face opposite to the dehiscence split of the anther (dorsal face).
+1 White 
+2 Cream 
+3 Yellow 
+4 Grey 
+5 Brown/rusty brown
+6 Pink/pink-purple
+7 Black (anthers aborted)
+8 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.13"
     .
 
 
