@@ -1368,3 +1368,290 @@ cco:fruitShapeLongitudinalCurvatureMusa a rdf:Property;
     cco:section "6.7.4"
     .
 
+cco:transverseSectionOfFruitMusa a rdf:Property;
+    rdfs:label "Transverse section of fruit"@en;
+    rdfs:comment """
+Observed on mature fruit (‘ready to eat’ - ripe but not over-ripe, full yellow stage).
+1 Pronounced ridges
+2 Slightly ridged
+3 Rounded
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/transverseSectionOfFruitMusa.png>;
+    cco:section "6.7.5"
+    .
+cco:fruitApexMusa a rdf:Property;
+    rdfs:label "Fruit apex"@en;
+    rdfs:comment """
+Observed at the distal end of the fruit. 
+1 Pointed
+2 Lengthily pointed
+3 Blunt-tipped
+4 Bottle-necked
+5 Rounded
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/fruitApexMusa.png>;
+    cco:section "6.7.6"
+    .
+
+cco:remainsOfFlowerRelictsAtFruitApexMusa a rdf:Property;
+    rdfs:label "Remains of flower relicts at fruit apex"@en;
+    rdfs:comment """
+Observed at the distal end of the fruit. 
+1 Without any floral relicts
+2 Persistent style
+3 Base of the style prominent
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/remainsOfFlowerRelictsAtFruitApexMusa.png>;
+    cco:section "6.7.7"
+    .
+
+cco:fruitPedicelLengthMusa a rdf:Property;
+    rdfs:label "Fruit pedicel length"@en;
+    rdfs:comment """
+1 ≤10 mm
+2 11 to 20 mm
+3 ≥21 mm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.8"
+    .
+
+cco:fruitPedicelWidthMusa a rdf:Property;
+    rdfs:label "Fruit pedicel width"@en;
+    rdfs:comment """
+1 <5 mm
+2 5 to 10 mm
+3 >10 mm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.9"
+    .
+
+cco:pedicelSurfaceMusa a rdf:Property;
+    rdfs:label "Pedicel surface"@en;
+    rdfs:comment """
+1 Hairless
+2 Hairy
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.10"
+    .
+
+cco:fusionOfPedicelsMusa a rdf:Property;
+    rdfs:label "Fusion of pedicels"@en;
+    rdfs:comment """
+(Before joining the crown)
+1 Very partially or no visible sign of fusion
+2 Partially fused
+3 Totally fused
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.11"
+    .
+
+cco:immatureFruitPeelColourMusa a rdf:Property;
+    rdfs:label "Immature fruit peel colour"@en;
+    rdfs:comment """
+Recorded on the youngest hand of the bunch, before maturity. 
+1 Yellow
+2 Light green
+3 Green
+4 Green and pink, red or purple
+5 Silvery
+6 Dark green
+7 Brown/rusty brown
+8 Pink, red or purple
+9 Black
+10 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.12"
+    .
+
+cco:matureFruitPeelColourMusa a rdf:Property;
+    rdfs:label "Mature fruit peel colour"@en;
+    rdfs:comment """
+Recorded at fruit maturity (ripe, but not over-ripe; full yellow stage). 
+1 Yellow
+2 Bright yellow
+3 Orange
+4 Grey spots
+5 Brown/rusty-brown
+6 Orange red, red or pink/pink purple
+7 Red-purple
+8 Black
+9 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.13"
+    .
+
+cco:fruitPeelThicknessMusa a rdf:Property;
+    rdfs:label "Fruit peel thickness"@en;
+    rdfs:comment """
+Recorded at fruit maturity (‘ready to eat’ ripe, but not over-ripe; full yellow stage)
+1 Two or less
+2 Three or more
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.14"
+    .
+
+cco:adherenceOfTheFruitPeelMusa a rdf:Property;
+    rdfs:label "Adherence of the fruit peel"@en;
+    rdfs:comment """
+Recorded at fruit maturity (ripe, but not over-ripe; full yellow stage)
+1 Fruit peels easily
+2 Fruit does not peel easily
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.15"
+    .
+
+cco:cracksInFruitPeelMusa a rdf:Property;
+    rdfs:label "Cracks in fruit peel"@en;
+    rdfs:comment """
+Recorded at fruit maturity if the peel splits without mechanical damage
+1 Without cracks
+2 Cracked
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.16"
+    .
+
+cco:pulpInFruitMusa a rdf:Property;
+    rdfs:label "Pulp in fruit"@en;
+    rdfs:comment """
+1 Without pulp
+2 With pulp
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.17"
+    .
+
+cco:pulpColourBeforeMaturityMusa a rdf:Property;
+    rdfs:label "Pulp colour before maturity"@en;
+    rdfs:comment """
+Recorded on youngest hand of the bunch. 
+1 White
+2 Cream
+3 Ivory
+4 Yellow
+5 Orange
+6 Beige-pink
+7 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.18"
+    .
+
+cco:pulpColourAtMaturityMusa a rdf:Property;
+    rdfs:label "Pulp colour at maturity"@en;
+    rdfs:comment """
+(Ripe, but not over-ripe; full yellow stage)
+1 White
+2 Cream
+3 Ivory
+4 Yellow
+5 Orange
+6 Beige-pink
+7 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.19"
+    .
+
+cco:fruitsFallFromHandsMusa a rdf:Property;
+    rdfs:label "Fruits fall from hands"@en;
+    rdfs:comment """
+Observed at fruit maturity
+1 Persistent
+2 Deciduous
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.20"
+    .
+cco:fleshTextureMusa a rdf:Property;
+    rdfs:label "Flesh texture"@en;
+    rdfs:comment """
+1 Firm
+2 Soft
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.21"
+    .
+
+cco:predominantTasteMusa a rdf:Property;
+    rdfs:label "Predominant taste"@en;
+    rdfs:comment """
+1 Astringent (like cooking banana)
+2 Mild, slightly tasty or tasteless
+3 Sweet (like Cavendish)
+4 Sugary (like ‘Pisang Mas’)
+5 Sweet and acidic (apple like)
+6 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.22"
+    .
+
+cco:presenceOfSeedWithSourceOfPollenMusa a rdf:Property;
+    rdfs:label "Presence of seed with source of pollen"@en;
+    rdfs:comment """
+Record the number of seeds only if there exists in the vicinity of the plant a
+population of wild relatives, or male fertile hybrids (pollen sources), or if the female
+flowers are artificially pollinated
+1 <5
+2 5-20
+3 >20
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.23"
+    .
+
+cco:seedSurfaceMusa a rdf:Property;
+    rdfs:label "Seed surface"@en;
+    rdfs:comment """
+1 Smooth
+2 Wrinkled
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.24"
+    .
+
+cco:seedShapeMusa a rdf:Property;
+    rdfs:label "Seed shape"@en;
+    rdfs:comment """
+1 Flat
+2 Angular (more or less pyramidal)
+3 Globular (spherical)
+4 Rounded (but not completely spherical)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.25"
+    .
+
