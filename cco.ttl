@@ -24,7 +24,9 @@ cco:Characterization a rdfs:Class;
 
 cco:Musa a rdfs:Class;
     rdfs:label "Musa spp.";
-    rdfs:subClassOf cco:Characterization
+    rdfs:subClassOf cco:Characterization;
+    foaf:page <http://www.bioversityinternational.org/e-library/publications/detail/descriptors-for-banana-emmusaem-spp/>;
+    foaf:depiction <http://www.agrobiodiversity.org/files/MusaPDF.jpg>
     .
         
 cco:leafHabitMusa a rdf:Property;
@@ -70,8 +72,7 @@ cco:pseudostemAspectMusa a rdf:Property;
 3 Robust"""@en;
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
-    cco:section "6.2.2";
-    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    cco:section "6.2.2"
     .
     
     
@@ -90,8 +91,7 @@ cco:pseudostemColourMusa a rdf:Property;
 10 Other"""@en;
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
-    cco:section "6.2.3";
-    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    cco:section "6.2.3"
     .
     
     
@@ -102,8 +102,7 @@ cco:pseudostemAppearanceMusa a rdf:Property;
 2 Shiny (not waxy)"""@en;
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
-    cco:section "6.2.4";
-    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    cco:section "6.2.4"
     .
     
     
@@ -123,8 +122,7 @@ not observed.
 8 Other"""@en;
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
-    cco:section "6.2.5";
-    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    cco:section "6.2.5"
     .
     
 cco:pigmentationUnderlyingPseudostemMusa a rdf:Property;
@@ -136,8 +134,7 @@ cco:pigmentationUnderlyingPseudostemMusa a rdf:Property;
 4 Other"""@en;
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
-    cco:section "6.2.6";
-    foaf:depiction <http://www.agrobiodiversity.org/files/PseudostemSuckers.png>
+    cco:section "6.2.6"
     .
     
     
@@ -223,8 +220,7 @@ cco:blotchesColourMusa a rdf:Property;
 5 Other"""@en;
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
-    cco:section "6.3.2";
-    foaf:depiction <http://www.agrobiodiversity.org/files/PetioleMidribLeaf.png>
+    cco:section "6.3.2"
     .
     
 cco:petioleCanalLeafIIIMusa a rdf:Property;
@@ -257,3 +253,132 @@ cco:petioleMarginsMusa a rdf:Property;
     cco:section "6.3.4"
     .
 
+cco:wingTypeMusa a rdf:Property;
+    rdfs:label "Wing type"@en;
+    rdfs:comment """
+1 Dry
+2 Not dry
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.5"
+    .
+
+cco:petioleMarginColourMusa a rdf:Property;
+    rdfs:label "Petiole margin colour"@en;
+    rdfs:comment """
+1 Green
+2 Pink-purple to red
+3 Purple to blue
+4 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.6"
+    .
+
+cco:edgeOfPetioleMarginMusa a rdf:Property;
+    rdfs:label "Edge of petiole margin"@en;
+    rdfs:comment """
+1 Colourless (without a colour line along)
+2 With a colour line along
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.7"
+    .
+
+cco:petioleWarginWidthMusa a rdf:Property;
+    rdfs:label "Petiole margin width"@en;
+    rdfs:comment """
+1 ≤1 cm
+2 >1 cm
+3 Cannot be defined
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.8"
+    .
+
+
+cco:leafBladeLengthMusa a rdf:Property;
+    rdfs:label "Leaf blade length"@en;
+    rdfs:comment """
+Measured at its maximum point
+1 ≤170 cm
+2 171 to 220 cm
+3 221 to 260 cm
+4 ≥261 cm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.9"
+    .
+
+
+cco:leafBladeWidthMusa a rdf:Property;
+    rdfs:label "Leaf blade width"@en;
+    rdfs:comment """
+Measured at its maximum point
+1 ≤70 cm
+2 71 to 80 cm
+3 81 to 90 cm
+4 ≥91 cm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.10"
+    .
+
+cco:leafRatioMusa a rdf:Property;
+    rdfs:label "Leaf ratio"@en;
+    rdfs:comment """
+3 ≤2
+5 2.4 to 2.6
+7 ≥3
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.10.1"
+    .
+
+cco:petioleLengthMusa a rdf:Property;
+    rdfs:label "Petiole length"@en;
+    rdfs:comment """
+Recorded from the pseudostem to the lamina
+1 ≤50 cm
+2 51 to 70 cm
+3 ≥71 cm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.11"
+    .
+
+cco:colourOfLeafUpperSurfaceMusa a rdf:Property;
+    rdfs:label "Colour of leaf upper surface"@en;
+    rdfs:comment """
+1 Green-yellow
+2 Medium green
+3 Green
+4 Dark green
+5 Dark green with red-purple (presence of large blotches of
+red-purple)
+6 Blue
+7 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.12"
+    .
+
+cco:appearanceOfLeafUpperSurfaceMusa a rdf:Property;
+    rdfs:label "Appearance of leaf upper surface"@en;
+    rdfs:comment """
+1 Dull
+2 Shiny
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.13"
+    .
