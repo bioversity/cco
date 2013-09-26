@@ -1158,17 +1158,7 @@ Alexander’s pollen viability assessment method
 cco:styleBasicColourMusa a rdf:Property;
     rdfs:label "Style basic colour"@en;
     rdfs:comment """
-Do not refer to the minute blotches which can be present on the style (Descriptor
-    """@en;
-    rdfs:domain cco:Musa;
-    rdfs:range xsd:string;
-    cco:section "6.6.16"
-    .
-
-cco:7Musa a rdf:Property;
-    rdfs:label "7"@en;
-    rdfs:comment """
-). 
+Do not refer to the minute blotches which can be present on the style
 1 White 
 2 Cream 
 3 Red-purple
@@ -1176,7 +1166,7 @@ cco:7Musa a rdf:Property;
     """@en;
     rdfs:domain cco:Musa;
     rdfs:range xsd:string;
-    cco:section "6.6.1"
+    cco:section "6.6.16"
     .
 
 cco:pigmentationOnStyleMusa a rdf:Property;
