@@ -12,10 +12,13 @@ cco:  a owl:Ontology ;
       dc:description """The Crop Characterization Ontology provides main concepts and properties for describing the characteristics of various crops. These concepts enable an easy and quick discrimination between phenotypes. They are generally highly heritable, can be easily seen by the eye and are equally expressed in all environments. In addition, these may include a limited number of additional traits thought desirable by a consensus of users of the particular crop.""" ;
       dc:title "The Crop Characterization Ontology" ;
       dc:hasVersion "Revision: 0.1" ;
+      foaf:authors 
+        [ foaf:name "Alercia Adriana"; foaf:org "Bioversity International"; foaf:homepage "http://www.bioversityinternational.org/" ],
+        [ foaf:name "Luca Matteis"; foaf:org "Bioversity International"; foaf:homepage "http://www.bioversityinternational.org/" ];
       dc:contributor "Dr Silvio Belalcazar","Dr F. Carreel","Ching-Yan Tang","Dr Jeff Daniells","Prof. Bruno Delvaux","Mr Guy Evers","Dr Victor Galan Sauco","Dr Ricardo Goenaga","Prof. Oscar Haddad","Dr Yair Isralei","Mr Christophe Jenny","Mrs Deborah Karamura","Dr Emmanuel Lahav","Mr Christian Lavigne","Mr Thierry Lescot","Dr Rodomiro Ortiz","Mr Orlando C. Pascua","Mr Xavier Perrier","Dr Franklin Rosales","Ing. Irelio Sanchez Ramos","Prof Rony Swennen","Mr Hughes Tezenas du Montcel","Dr Kodjo Tomekpe", "Ir. Ines Van den houwe";
       dc:acknowledgments """IPGRI-INIBAP and CIRAD wish to place on record their sincere thanks to the numerous Musa workers around the world who have contributed directly or indirectly to the development of the Descriptors for banana. Mr H. Tezenas du Montcel, Mr C. Jenny and Dr X. Perrier from CIRAD-FLHOR have contributed to the development of the characterization form, which has been translated into English by Ms S. Sharrock (IBPGR) and into Spanish by Mr T. Lescot (CIRAD). Translation from French into English has been performed by Dr D.R. Jones, Ms E Arnaud and Dr J.P. Horry. Ms Adriana Alercia coordinated and supervised the text up to the pre-publication stage and provided technical advice. Ms Linda Sears edited the text and Ms Patrizia Tazza drew the cover, some illustrations, and prepared the layout. Scientific direction was provided by Dr Jean-Pierre Horry. Mr Paul Stapleton managed the production of the publication. Luca Matteis produced the underlying data model and the semantics of the ontology.""";
-    foaf:page "http://data.agrobiodiversity.org/cco";
-    rdfs:seeAlso "http://www.bioversityinternational.org/e-library/publications/categories/descriptors/"
+      foaf:page "http://data.agrobiodiversity.org/cco";
+      rdfs:seeAlso "http://www.bioversityinternational.org/e-library/publications/categories/descriptors/"
      .
 
 cco:Characterization a rdfs:Class;
@@ -382,3 +385,147 @@ cco:appearanceOfLeafUpperSurfaceMusa a rdf:Property;
     rdfs:range xsd:string;
     cco:section "6.3.13"
     .
+
+cco:colourOfLeafLowerSurfaceMusa a rdf:Property;
+    rdfs:label "Colour of leaf lower surface"@en;
+    rdfs:comment """
+1 Green-yellow 
+2 Medium green 
+3 Green
+4 Dark green
+5 Blue
+6 Red-purple
+7 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.14"
+    .
+
+cco:appearanceOfLeafLowerSurfaceMusa a rdf:Property;
+    rdfs:label "Appearance of leaf lower surface"@en;
+    rdfs:comment """
+1 Dull
+2 Shiny
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.15"
+    .
+
+
+cco:waxOnLeavesMusa a rdf:Property;
+    rdfs:label "Wax on leaves"@en;
+    rdfs:comment """
+Recorded on the lower surface
+1 Very little or no visible sign of wax
+2 Few wax
+3 Moderately waxy
+4 Very waxy
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.16"
+    .
+
+cco:insertionPointOfLeafBladesOnPetioleMusa a rdf:Property;
+    rdfs:label "Insertion point of leaf blades on petiole"@en;
+    rdfs:comment """
+1 Symmetric
+2 Asymmetric
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.17"
+    .
+
+
+cco:shapeOfLeafBladeBaseMusa a rdf:Property;
+    rdfs:label "Shape of leaf blade base"@en;
+    rdfs:comment """
+1 Both sides rounded
+2 One side rounded, one pointed
+3 Both sides pointed
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.18";
+    foaf:depiction <http://www.agrobiodiversity.org/files/shapeOfLeafBladeBase.png>
+    .
+
+cco:leafCorrugationMusa a rdf:Property;
+    rdfs:label "Leaf corrugation"@en;
+    rdfs:comment """
+Presence of ridges perpendicular to the secondary ribs on the leaf upper surface
+1 Even, smooth
+2 Few stripes
+3 Very corrugated
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.19"
+    .
+
+cco:colourOfMidribDorsalSurfaceMusa a rdf:Property;
+    rdfs:label "Colour of midrib dorsal surface"@en;
+    rdfs:comment """
+If pigmentation is seen, options are 4, 5 or 6.
+1 Yellow
+2 Light green
+3 Green
+4 Pink-purple
+5 Red-purple
+6 Purple to blue
+7 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.20"
+    .
+
+cco:colourOfMidribVentralSurfaceMusa a rdf:Property;
+    rdfs:label "Colour of midrib ventral surface"@en;
+    rdfs:comment """
+If pigmentation is seen, options are 4, 5 or 6.
+1 Yellow
+2 Light green
+3 Green
+4 Pink-purple
+5 Red-purple
+6 Purple to blue
+7 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.21"
+    .
+
+cco:colourOfCigarLeafDorsalSurfaceMusa a rdf:Property;
+    rdfs:label "Colour of cigar leaf dorsal surface"@en;
+    rdfs:comment """
+Look at the visible face (future lower face) of the cigar leaf before it is unfurled and
+before the plant flowers. (Chart A)
+1 Green
+2 Red-purple
+3 Other (specify in descriptor Notes, 6.8)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.22"
+    .
+
+cco:blotchesOnLeavesOfWaterSuckers a rdf:Property;
+    rdfs:label "Blotches on leaves of water suckers"@en;
+    rdfs:comment """
+Observed on young, non inhibited water suckers (if the lamina is sword shaped, it
+is not a water sucker)
+1 Without blotches
+2 Little or narrow blotches
+3 Large purple blotches
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.3.23"
+    .
+
+

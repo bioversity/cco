@@ -60,6 +60,13 @@ function run() {
     <dt>Latest version:</dt>
     <dd><a href="{{cco: foaf:page ?o}}">{{cco: foaf:page ?o}}</a> (<a href="{{cco: foaf:page ?o}}.ttl">RDF Turtle</a>)</dd>
 
+    <dt>Editors:</dt>
+
+    <dd>
+    {{#cco: foaf:authors ?author}}
+      {{?author foaf:name ?name}} - <a href="{{?author foaf:homepage ?homepage}}">{{?author foaf:org ?org}}</a><br>
+    {{/}}
+    </dd>
     <dt>Contributors:</dt>
 
     <dd>
@@ -174,6 +181,7 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 
 {{#?s a rdf:Property}}
 <div class="specterm" id="{{.}}"><h3>Property: {{?s rdfs:label ?label}}</h3>
+
    {{?s rdfs:comment ?comment}}
    <br>
    <br>
@@ -183,6 +191,11 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 
   <table style="th { float: top; }">
   <tbody>
+    <tr>
+    <th>ID:</th>
+    <td><a href="{{.}}">{{.}}</a></td>
+
+    </tr>
     <tr>
     <th>Domain:</th>
     <td><a href="{{?s rdfs:domain ?domain}}">{{?s rdfs:domain ?domain}}</a></td>
