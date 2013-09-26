@@ -1127,4 +1127,244 @@ Observed on the face opposite to the dehiscence split of the anther (dorsal face
     cco:section "6.6.13"
     .
 
+cco:pollenSacColourMusa a rdf:Property;
+    rdfs:label "Pollen sac colour"@en;
+    rdfs:comment """
+Recorded at the line where the anther splits to release pollen. 
+1 White 
+2 Cream 
+3 Yellow 
+4 Brown/rusty brown
+5 Pink/pink-purple
+6 Red-purple
+7 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.14"
+    .
+
+cco:pollenVitalityMusa a rdf:Property;
+    rdfs:label "Pollen vitality"@en;
+    rdfs:comment """
+Percentage of deformed and/or aborted grains in relation to normal grains. Use
+Alexander’s pollen viability assessment method
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.15"
+    .
+
+cco:styleBasicColourMusa a rdf:Property;
+    rdfs:label "Style basic colour"@en;
+    rdfs:comment """
+Do not refer to the minute blotches which can be present on the style (Descriptor
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.16"
+    .
+
+cco:7Musa a rdf:Property;
+    rdfs:label "7"@en;
+    rdfs:comment """
+). 
+1 White 
+2 Cream 
+3 Red-purple
+4 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.1"
+    .
+
+cco:pigmentationOnStyleMusa a rdf:Property;
+    rdfs:label "Pigmentation on style"@en;
+    rdfs:comment """
+1 Without pigmentation
+2 Purple
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.17"
+    .
+
+cco:styleExsertionMusa a rdf:Property;
+    rdfs:label "Style exsertion"@en;
+    rdfs:comment """
+In relation to the base of the lobes on the compound tepal
+1 Exserted
+2 Same level
+3 Inserted
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.18"
+    .
+
+cco:styleShapeMusa a rdf:Property;
+    rdfs:label "Style shape"@en;
+    rdfs:comment """
+1 Straight 
+2 Curved under stigma 
+3 Curved at the base
+4 Curved twice
+5 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/styleShapeMusa.png>;
+    cco:section "6.6.19"
+    .
+cco:stigmaColourMusa a rdf:Property;
+    rdfs:label "Stigma colour"@en;
+    rdfs:comment """
+1 Cream
+2 Yellow
+3 Pink/pink-purple
+4 Bright yellow
+5 Orange
+6 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.20"
+    .
+
+cco:ovaryShapeMusa a rdf:Property;
+    rdfs:label "Ovary shape"@en;
+    rdfs:comment """
+1 Straight
+2 Arched
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/ovaryShapeMusa.png>;
+    cco:section "6.6.21"
+    .
+
+cco:ovaryBasicColourMusa a rdf:Property;
+    rdfs:label "Ovary basic colour"@en;
+    rdfs:comment """
+1 White 
+2 Cream 
+3 Yellow 
+4 Green
+5 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.22"
+    .
+
+cco:ovaryPigmentationMusa a rdf:Property;
+    rdfs:label "Ovary pigmentation"@en;
+    rdfs:comment """
+1 Very few or no visible sign of pigmentation
+2 With red-purple
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.23"
+    .
+
+cco:dominantColourOfMaleFlowerMusa a rdf:Property;
+    rdfs:label "Dominant colour of male flower"@en;
+    rdfs:comment """
+1 White 
+2 Cream 
+3 Yellow 
+4 Pink/pink-purple
+5 Red-purple
+6 Other
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.24"
+    .
+
+ 
+cco:irregularFlowersMusa a rdf:Property;
+    rdfs:label "Irregular flowers"@en;
+    rdfs:comment """
+Record number of flowers per cluster with an abnormal number of stamens, fusion
+of free and compound tepal, etc.
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.6.25"
+    .
+
+cco:arrangementOfOvulesMusa a rdf:Property;
+    rdfs:label "Arrangement of ovules"@en;
+    rdfs:comment """
+Observed soon after flowering and before the fruit fills. Observe a cross-section of
+a fruit.
+1 Two rowed
+2 Four-rowed (more or less)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/arrangementOfOvulesMusa.png>;
+    cco:section "6.6.26"
+    .
+
+cco:fruitPositionMusa a rdf:Property;
+    rdfs:label "Fruit position"@en;
+    rdfs:comment """
+Recorded only on fruits arranged symmetrically around the stalk
+1 Curved towards stalk
+2 Parallel to the stalk
+3 Curved upward (obliquely, at a 45°angle upward)
+4 Perpendicular to the stalk
+5 Pendant
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.1"
+    .
+
+cco:numberOfFruitsMusa a rdf:Property;
+    rdfs:label "Number of fruits"@en;
+    rdfs:comment """
+Observed on the mid-hand of the bunch
+1 ≤12
+2 13-16
+3 ≥17
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.2"
+    .
+
+cco:fruitLengthMusa a rdf:Property;
+    rdfs:label "Fruit length"@en;
+    rdfs:comment """
+Measured as the internal arc of the fruit, without pedicel
+1 ≤15 cm
+2 16- 20 cm
+3 21- 25 cm
+4 26- 30 cm
+5 ≥31 cm
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    cco:section "6.7.3"
+    .
+
+cco:fruitShapeLongitudinalCurvatureMusa a rdf:Property;
+    rdfs:label "Fruit shape longitudinal curvature"@en;
+    rdfs:comment """
+1 Straight (or slightly curved)
+2 Straight in the distal part
+3 Curved (sharp curve)
+4 Curved in ‘S’ shape (double curvature)
+5 Other (specify in descriptor Notes, 6.8)
+    """@en;
+    rdfs:domain cco:Musa;
+    rdfs:range xsd:string;
+    foaf:depiction <http://www.agrobiodiversity.org/files/fruitShapeLongitudinalCurvatureMusa.png>;
+    cco:section "6.7.4"
+    .
 
