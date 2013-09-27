@@ -5,6 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix book: <http://purl.org/NET/book/vocab#> .
    
 cco:  a owl:Ontology ;
       dc:created "2013/09/23 12:00:00";
@@ -28,7 +29,8 @@ cco:Musa a rdfs:Class;
     rdfs:label "Musa spp.";
     rdfs:subClassOf cco:Characterization;
     foaf:page <http://www.bioversityinternational.org/e-library/publications/detail/descriptors-for-banana-emmusaem-spp/>;
-    foaf:depiction <http://www.agrobiodiversity.org/files/MusaPDF.jpg>
+    foaf:depiction <http://www.agrobiodiversity.org/files/MusaPDF.jpg>;
+    book:isbn "978-92-9043-307-1"
     .
         
 cco:leafHabitMusa a rdf:Property;

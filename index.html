@@ -50,7 +50,8 @@ function run() {
 </head>
 
 <body>
-  <h1><span class="title">{{cco: dc:title ?o}}</span>, <small>{{cco: dc:hasVersion ?o}}</small><br /></h1>
+  <h1><span class="title">{{cco: dc:title ?o}}</span></h1>
+  <h2>{{cco: dc:hasVersion ?o}}</h2>
 
 <table width="100%" border="0">
   <tbody><tr>
@@ -175,6 +176,8 @@ property and by individuals. All the terms are hyperlinked to their detailed des
    <br>
    <br>
    <b>Page:</b> <a href="{{?s foaf:page ?page}}">{{?s foaf:page ?page}}</a>
+   <br>
+   <b>ISBN:</b> {{?s book:isbn ?isbn}}
 
 </div>
 {{/}}
