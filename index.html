@@ -11,12 +11,12 @@
 <script>
 $(function(){
   
-  var url = 'cco.ttl';
+  var url = 'https://api.github.com/repos/bioversity/cco/contents/cco.ttl?callback=?';
 
-  $.get(url, function(data) {
+  $.getJSON(url, function(data) {
     // atob() breaks with newlines, so remove them
-    //var ttl = atob(data.data.content.replace(/\s/g, ''));
-    var ttl = data;
+    var ttl = atob(data.data.content.replace(/\s/g, ''));
+    //var ttl = data;
 
     var turtle = new ParseTurtle();
 
