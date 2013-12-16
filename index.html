@@ -45,8 +45,11 @@ function run() {
   });
   $('title').text($('span.title').text());
   setTimeout(function(){
-    if(window.location.hash)
-      window.location.hash = window.location.hash;
+    if(window.location.hash) {
+      var tmp = window.location.hash;
+      window.location.hash = '#foo';
+      window.location.hash = tmp;
+    }
   }, 1000);
 }
 
