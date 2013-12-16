@@ -45,7 +45,7 @@ function run() {
   });
   $('title').text($('span.title').text());
   if(window.location.hash)
-    window.location.hash = window.location.hash;
+    window.location.hash = '#' + window.location.hash;
 }
 
 </script>
